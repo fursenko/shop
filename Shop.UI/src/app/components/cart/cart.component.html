@@ -1,0 +1,10 @@
+<div *ngIf="productsToBuy.length > 0; else empty">
+    <p class="lead">{{ productsToBuy.length }} products in cart</p>
+    <a href="#" class="btn btn-link" (click)="clear()">Clear</a>
+</div>
+
+<ng-template #empty>
+    <div >
+        <p class="lead">Cart is empty</p>
+    </div>
+</ng-template>
