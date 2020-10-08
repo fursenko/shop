@@ -28,6 +28,7 @@ namespace Shop.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(corsOption => corsOption.AddPolicy("SHOP-CORS", corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin()));
             services.AddDbContext<ShopContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SHOP"));
@@ -44,8 +45,8 @@ namespace Shop.Api
             }
 
             app.UseRouting();
-            
-            app.UseCors();
+
+            app.UseCors("SHOP-CORS");
 
             app.UseAuthorization();
 

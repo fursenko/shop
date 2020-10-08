@@ -13,7 +13,8 @@ namespace Shop.Api.DataAccess
             {
                 Id = product.Id,
                 Name = product.Name,
-                Color = product.Color
+                Color = product.Color,
+                Price = product.Price
             };
         }
     }

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  ProductsService
-  , CartService
-} from "../../services";
+import { CartService } from "../../../cart/services";
+import { ProductsService } from "../../services";
 import { ProductModel } from "../../models";
 import { Observable } from "rxjs";
 
@@ -19,7 +17,11 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe((data) => {
-      this.products = data
+      this.products = data;
     });
+  }
+
+  onBought(product: ProductModel) {
+    this.cartService.add(product);
   }
 }
