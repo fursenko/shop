@@ -16,6 +16,6 @@ namespace Shop.Api.DataAccess
         public string Color { get; set; }
 
         [Column("ListPrice")]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

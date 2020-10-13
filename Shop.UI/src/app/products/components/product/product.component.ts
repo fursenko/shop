@@ -17,9 +17,15 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.product.price);
   }
 
   buy() {
     this.bought.emit(this.product);
   }
+
+  public get isAvailable() : boolean {
+    return Number.parseInt(this.product.price) != 0;
+  }
+  
 }
