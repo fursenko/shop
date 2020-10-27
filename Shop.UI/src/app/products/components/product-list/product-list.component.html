@@ -1,8 +1,8 @@
-<div>
-    <ul *ngFor="let product of products;">
-
-        <app-product [product]="product" (bought)="onBought($event)">
-            
-        </app-product>
-    </ul>
+<div class="container">
+    <div *ngFor="let product of products;">
+        <div class="product-container">
+            <app-product [product]="product" (bought)="onBought($event)">
+            </app-product>
+        </div>
+    </div>
 </div>

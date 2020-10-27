@@ -15,11 +15,15 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.addProduct.subscribe((pr) => {
-        this.productsToBuy.push(pr);
+      this.productsToBuy.push(pr);
     });
   }
 
-  clear(){
+  clear() {
     this.productsToBuy = [];
+  }
+
+  showCart() {
+    console.log('show cart');
   }
 }
